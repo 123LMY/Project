@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="css/bootstrap-table.css" />
+<link rel="stylesheet" type="text/css" href="css/toastr.min.css" />
+<script type="text/javascript" src="js/toastr.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-table.js"></script>
+<script type="text/javascript" src="js/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript" src="js/adminJS/resourceEquipmsg.js"></script>
+</head>
+<body>
+	<div class="nav">
+		当前位置：<span>首页/资源信息管理/设备信息管理</span>
+	</div>
+	<h3 class="dailytitle">设备信息管理</h3>
+	<hr />
+	<div class="row" style="margin-bottom:3%;">
+		<div class="input-group" style="padding:0 25%;">
+			<input type="text" placeholder="请输入关键字" class="form-control"
+				id="deviceName"> <span class="input-group-btn">
+				<button class="btn btn-info " type="button" id="checkbtn">查询</button>
+			</span>
+		</div>
+	</div>
+	<div class="btn-group col-lg-5" style="padding: 0; margin-bottom: 1%;">
+		<button id="addbtn" type="button" class="btn btn-info col-lg-3"
+			data-toggle="modal" data-target="">
+			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
+		</button>
+		<!-- <button id="editbtn" type="button" class="btn btn-default col-lg-2">
+			<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>编辑
+		</button> -->
+		<button id="rfidbtn" type="button" class="btn btn-primary col-lg-3">
+			<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>RFID读取
+		</button>
+		<button id="deletebtn" type="button" class="btn btn-danger col-lg-3">
+			<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>批量删除
+		</button>
+	</div>
+
+	<table id="table_equipmsg" style="word-break:break-all; word-wrap:break-all;"></table>
+</body>
+<div class="modal fade myModal" id="myModalEquipmsg" tabindex="-1 "
+	role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div id="myModalLabel" class="modal-title ">
+					<form class="ibox-content form-horizontal m-t " id="adddevfrom">
+						<h3>新增设备</h3>
+						<hr />
+						<div class="form-group ">
+							<label class="col-sm-3 control-label ">设备型号：</label>
+							<div class="col-sm-8 ">
+								<input id="adddevModel" name="adddevModel" class="form-control "
+									placeholder="请输入设备型号" type="text">
+
+							</div>
+						</div>
+						<div class="form-group ">
+							<label class="col-sm-3 control-label ">名称：</label>
+							<div class="col-sm-8 ">
+								<input id="adddevName" name="adddevName" class="form-control "
+									placeholder="请输入名称" type="text">
+
+							</div>
+						</div>
+						<div class="form-group ">
+							<label class="col-sm-3 control-label ">厂家：</label>
+							<div class="col-sm-8 ">
+								<input id="addvender" name="addvender" class="form-control "
+									placeholder="请输入厂家" type="text">
+
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">类别：</label>
+							<div class="col-sm-8">
+								<select id="addtypeName" name="addtypeName" class="form-control">
+
+								</select>
+
+							</div>
+						</div>
+						<div class="form-group ">
+							<label class="col-sm-3 control-label ">保管员：</label>
+							<div class="col-sm-8 ">
+								<input id="addcustodian" name="addcustodian"
+									class="form-control " placeholder="请输入设备保管员" type="text">
+
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">备注：</label>
+							<div class="col-sm-8">
+								<textarea id="addremark" name="addremark" class="form-control"
+									type="text" placeholder="请填写备注"></textarea>
+							</div>
+						</div>
+						<button type="button"
+							class="btn btn-info block full-width m-b noticebutton"
+							id="adddevbtn">确定</button>
+						<button type='reset'
+							class="btn btn-info block full-width m-b noticebutton1"
+							id="resetBut">重置</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade myModal" id="myModalSubEquipmsg" tabindex="-1 "
+	role="dialog" aria-labelledby="myModalLabel2">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div id="myModalLabel2" class="modal-title ">
+					<form class="ibox-content form-horizontal m-t " id="adddevdetailfrom">
+						<h3>新增子设备</h3>
+						<hr />
+						<div class="form-group ">
+							<label class="col-sm-3 control-label ">设备序号：</label>
+							<div class="col-sm-8 ">
+								<input id="adddevSn" name="adddevSn" class="form-control "
+									placeholder="请输入设备序号" type="text">
+
+							</div>
+						</div>
+						<div class="form-group ">
+							<label class="col-sm-3 control-label ">RFID：</label>
+							<div class="col-sm-8 ">
+								<input id="addRFID" name="addRFID" class="form-control "
+									placeholder="请输入RFID" type="text">
+
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">类别：</label>
+							<div class="col-sm-8">
+								<select id="adddevStatus" name="adddevStatus"
+									class="form-control">
+									<option value="0">空闲</option>
+									<option value="1">在用</option>
+									<option value="2">维修</option>
+									<option value="3">损坏</option>
+									<option value="4">报废</option>
+								</select>
+
+							</div>
+						</div>
+						<div class="form-group ">
+							<label class="col-sm-3 control-label ">所属实验室：</label>
+							<div class="col-sm-8 ">
+								<input id="addlabName" name="addlabName" class="form-control "
+									placeholder="请输入所属实验室" type="text">
+
+							</div>
+						</div>
+						<div class="form-group ">
+							<label class="col-sm-3 control-label ">柜子号：</label>
+							<div class="col-sm-8 ">
+								<input id="addcabNo" name="addcabNo" class="form-control "
+									placeholder="请输入柜子号" type="text">
+
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">备注：</label>
+							<div class="col-sm-8">
+								<textarea id="adddetailremark" name="adddetailremark"
+									class="form-control" type="text" placeholder="请填写备注"></textarea>
+							</div>
+						</div>
+						<input type="hidden" value="" id="devId" />
+						<button type="button"
+							class="btn btn-info block full-width m-b noticebutton"
+							id="adddevdetailbtn">确定</button>
+						<button type='reset'
+							class="btn btn-info block full-width m-b noticebutton1"
+							id="resetBut">重置</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

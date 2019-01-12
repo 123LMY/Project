@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="css/bootstrap-table.css" />
+<link rel="stylesheet" type="text/css" href="css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="css/fileinput.min.css" />
+<script type="text/javascript" src="js/toastr.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-table.js"></script>
+<script type="text/javascript" src="js/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript" src="js/fileinput.min.js"></script>
+<script type="text/javascript" src="js/fileinput-zh.js"></script>
+<script type="text/javascript" src="js/adminJS/dataUser.js"></script>
+</head>
+<body>
+	<div class="nav">
+		当前位置：<span>首页/日常管理/用户信息维护</span>
+	</div>
+	<h3 class="dailytitle">用户信息维护</h3>
+	<hr />
+	<div class="input-group" style="width: 40%; margin-left: 28%">
+		<input type="text" placeholder="请输入" class="form-control"
+			id="realNameInput"> <span class="input-group-btn">
+			<button class="btn btn-info" type="button" id="checkbtn">查询</button>
+		</span>
+	</div>
+	<div id="userbutton" class="btn-group col-lg-5" style="margin-bottom:2%" >
+		<button id="Duser_add" type="button" class="btn btn-info col-lg-3"
+			data-toggle="modal" data-target="#myModalUser1">
+			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
+		</button>
+		<button id="Duser_edit" type="button" class="btn btn-primary col-lg-3"
+			data-toggle="modal" data-target="">
+			<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>编辑
+		</button>
+		<button id="Duser_insert" type="button" class="btn btn-success col-lg-3"
+			data-toggle="modal" data-target="#myModalUser3">
+			<span class="glyphicon glyphicon-import" aria-hidden="true"></span>导入
+		</button>
+	</div>
+	<table id="table_user" style="word-break:break-all; word-wrap:break-all;"></table>
+</body>
+<div class="modal fade myModal" id="myModalUser1" tabindex="-1 "
+	role="dialog" aria-labelledby="addModal">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div id="addModal" class="modal-title ">
+					<form class="ibox-content form-horizontal m-t " action=""
+						method="post" id="addForm">
+						<h3>新增用户</h3>
+						<hr />
+						<div class="form-group ">
+							<label class="col-sm-3 control-label ">*用户名：</label>
+							<div class="col-sm-8 ">
+								<input id="adduserName" name="userName" class="form-control "
+									placeholder="请输入学号或工号" type="text">
+
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">*电子邮箱：</label>
+							<div class="col-sm-8">
+								<input id="addemail" name="email" value="" class="form-control"
+									type="email" placeholder="请输入合法邮箱">
+
+							</div>
+						</div>
+						<div class="form-group ">
+							<label class="col-sm-3 control-label ">*真实姓名：</label>
+							<div class="col-sm-8 ">
+								<input id="addrealName" name="realName" class="form-control "
+									placeholder="请输入真实姓名" type="text">
+
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">*用户权限：</label>
+							<div class="col-sm-8">
+								<select id="addgrants" name="grants" class="form-control">
+									<option value="0">普通</option>
+									<option value="1">管理员</option>
+								</select>
+
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">*用户类别：</label>
+							<div class="col-sm-8">
+								<select id="adduserType" name="userType" class="form-control">
+									<option value="0">学生</option>
+									<option value="1">老师</option>
+								</select>
+
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">*手机号码：</label>
+							<div class="col-sm-8">
+								<input id="addphone" name="phone" class="form-control" value=""
+									type="text" placeholder="请输入以13、15、18开头的11号码，或是以6开头的5位或6位短号">
+
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">备注：</label>
+							<div class="col-sm-8">
+								<textarea id="addremark" name="remark" class="form-control"
+									type="text" placeholder="请填写备注"></textarea>
+							</div>
+						</div>
+
+						<button type="button"
+							class="btn btn-info block full-width m-b noticebutton"
+							id="addbtn">提交</button>
+						<button type='reset'
+							class="btn btn-info block full-width m-b noticebutton1">重置</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="myModalUser2" tabindex="-1 "
+	role="dialog" aria-labelledby="editModal">
+	<div class="modal-dialog modal-md">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div id="editModal" class="modal-title ">
+					<form id="edituserform" class="ibox-content form-horizontal m-t " action=""
+						method="post">
+						<h3>编辑用户</h3>
+						<hr />
+						<div class="form-group">
+							<label class="col-sm-3 control-label">修改用户角色：</label>
+							<div class="col-sm-8">
+								<select id="edituserType" name="userType" class="form-control">
+									<option value="1">老师</option>
+									<option value="0">学生</option>
+								</select>
+
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">修改用户权限：</label>
+							<div class="col-sm-8">
+								<select id="editgrants" name="grants" class="form-control">
+									<option value="0">学生</option>
+									<option value="1">管理员</option>
+								</select>
+
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label"><input
+								type="checkbox" value="" id="isReset">重置密码</label>
+							<label class="col-sm-5 control-label"><input
+								type="checkbox" value="" id="isFrozen">冻结该账户</label>
+						</div>
+						<input hidden="hidden" type="text" id="editUserId" value="0">
+						<button type="button"
+							class="btn btn-info block full-width m-b noticebutton" style="display:block;margin:0 auto"
+							id="editbtn">提交</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade " id="myModalUser3" tabindex="-1 "
+	role="dialog" aria-labelledby="inputModal">
+	<div class="modal-dialog modal-md">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div id="inputModal" class="modal-title ">
+					<form class="ibox-content form-horizontal m-t " action=""
+						method="post" enctype="multipart/form-data">
+						<h3>用户导入</h3>
+						<hr />
+						<input id="f_upload" name="file" multiple="multiple" type="file"
+							data-show-caption="true" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="qrcode" tabindex="-1 "
+	role="dialog" aria-labelledby="qrcodeModal">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div id="qrcodeModal" class="modal-title">
+					联系方式
+				</div>
+			</div>
+			<div class="text-center">
+				<img alt="" src="" id="qrcodeImg">
+			</div>
+		</div>
+	</div>
+</div>

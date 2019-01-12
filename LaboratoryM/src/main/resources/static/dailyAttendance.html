@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>管理端首页</title>
+<script type="text/javascript" src="js/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript" src="js/adminJS/dailyAttendance.js"></script>
+</head>
+<body>
+	<div class="nav">
+		当前位置：<span>首页/日常管理/考勤查看或统计</span>
+	</div>
+	<h3 class="dailytitle">考勤查看或统计</h3>
+	<hr />
+	<div class="attendance flex">
+		<div style="flex: 2">
+			<div class="input-group input-inline-sm col-sm-12">
+				<span class="input-group-addon">查询</span> <input type="text"
+					class="form-control" placeholder="请选择开始日期" id="signinTime">
+				<span class="input-group-addon "
+					style="background-color: #ffffff; border: 0px">--</span> <input
+					type="text" class="form-control" placeholder="请选择结束日期"
+					id="signoutTime">
+			</div>
+		</div>
+		<div class="flexpart flex" style="flex: 2">
+			<div class="attendanceflex1">
+				<input type="text" class="demo-input col-sm-3 form-control"
+					placeholder="请输入姓名" id="realName">
+			</div>
+			<div class="attendanceflex2">
+				<button type="button" class="btn btn-info" id="query">查询</button>
+			</div>
+		</div>
+	</div>
+	<table id="table_attendance"
+		style="word-break: break-all; word-wrap: break-all;"></table>
+
+</body>

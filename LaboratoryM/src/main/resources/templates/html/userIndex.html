@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--thymeleaf namespace  -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+</head>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../ref/layui/layui.js"></script>
+<script type="text/javascript" src="../js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="../js/bootstrap-table.js"></script>
+<script type="text/javascript" src="../js/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript" src="../js/jquery.bootstrap.newsbox.js"></script>
+<script type="text/javascript" src="../js/toastr.min.js"></script>
+<script type="text/javascript" src="../js/sweetalert.min.js"></script>
+<script type="text/javascript" src="../js/lobibox.js"></script>
+
+<script type="text/javascript" src="../js/userJS/announcement.js"></script>
+<!-- 首頁公告 -->
+<script type="text/javascript"
+	src="../js/userJS/laboratoryReservation.js"></script>
+<!--项目预约 -->
+<script type="text/javascript"
+	src="../js/userJS/deviceReservation.js"></script>
+<!--设备预约  -->
+<script type="text/javascript"
+	src="../js/userJS/projectManagerment.js"></script>
+<!--项目管理  -->
+<script type="text/javascript"
+	src="../js/userJS/projectRegistration.js"></script>
+<!--項目登记  -->
+<script type="text/javascript"
+	src="../js/userJS/labReservationRecord.js"></script>
+<!-- 实验室预约记录 -->
+<script type="text/javascript"
+	src="../js/userJS/devReservationRecord.js"></script>
+<!-- 设备预约记录 -->
+<script type="text/javascript"
+	src="../js/userJS/updatePersonalMsg.js"></script>
+<!-- 修改個人信息 -->
+<script type="text/javascript" src="../js/userJS/updatePassword.js"></script>
+<!-- 修改个人密码 -->
+
+<link rel="stylesheet" href="../css/bootstrap-theme.min.css" />
+<link rel="stylesheet" href="../css/bootstrap.min.css" />
+<link rel="stylesheet" href="../css/bootstrap-table.css" />
+<link rel="stylesheet" href="../css/bootstrap-datetimepicker.css" />
+<link rel="stylesheet" href="../ref/layui/css/layui.css" />
+<link rel="stylesheet" href="../css/personalPage.css" />
+<link rel="stylesheet" href="../css/toastr.min.css" />
+<link rel="stylesheet" href="../css/sweetalert.css" />
+<link rel="stylesheet" href="../css/style1.css" />
+<link rel="stylesheet" href="../css/reset.min.css" />
+<link rel="stylesheet" href="../css/Lobibox.min.css" />
+<body>
+	<div id="cont">
+		<div id="head_content">
+			<ul>
+				<li id="navbarIcon"><i class="glyphicon glyphicon-th-list"></i></li>
+				<li id="s_logo"><img src="../img/GDQY.png"
+					style="width: 100%;" /></li>
+				<li id="title_" class='noticeBtn'> 实验室智能系统</li>
+				<li id="userAndLogout">
+				<span class="glyphicon glyphicon-user" style="padding-right: 3%;"></span><span
+					id="loginName"></span> <a href="#" class="loginOut">[退出登录]</a><a href="#" id="loginOutIcon" class="loginOut" ><i class="glyphicon glyphicon-log-out"></i></a> </li>
+			</ul>
+		</div>
+
+		<div id="main_content">
+			<ul class="hList">
+				<li><a href="#" class="menu">
+						<h2 class="menu-title">個人信息</h2>
+						<ul class="menu-dropdown">
+							<li class="updatePersonal_navbar">修改個人信息</li>
+							<li class="updatePassword_navbar">修改密码</li>
+						</ul>
+				</a></li>
+				<li><a href="#" class="menu">
+						<h2 class="menu-title menu-title_2nd">资源预约</h2>
+						<ul class="menu-dropdown">
+							<li class="labor_reservation_navbar">实验室预约</li>
+							<li class="equip_reservation_navbar">设备预约</li>
+						</ul>
+				</a></li>
+				<li><a href="#" class="menu">
+						<h2 class="menu-title menu-title_3rd">项目管理</h2>
+						<ul class="menu-dropdown">
+							<li class="project_management_navbar">项目列表</li>
+							<li class="project_registration_navbar">项目登记</li>
+						</ul>
+				</a></li>
+				<li><a href="#" class="menu">
+						<h2 class="menu-title menu-title_4th">预约记录</h2>
+						<ul class="menu-dropdown">
+							<li class="labReservationRecord">实验室预约记录</li>
+							<li class="devReservationRecord">设备预约记录</li>
+						</ul>
+				</a></li>
+			</ul>
+			
+			<!-- 移动端导航  -->
+			<div class="layui-bg-black" id="left_content">
+			    <div class="layui-side-scroll">
+			      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+			      	<ul class="layui-nav layui-nav-tree"  lay-filter="test" style="min-width: 100%;min-height: 100%;">
+			      		<li class="layui-nav-item">
+				          	<a class="" href="javascript:;"><i class="glyphicon glyphicon-user"></i>个人信息</a>
+				          	<dl class="layui-nav-child">
+				            	<dd class="updatePersonal_navbar"><a href="#">修改个人信息</a></dd>	
+				            	<dd class="updatePassword_navbar"><a href="#">修改密码</a></dd>		        
+				          	</dl>
+			        	</li>
+			        	<li class="layui-nav-item">
+				          	<a class="" href="javascript:;"><i class="glyphicon glyphicon-asterisk"></i>资源预约</a>
+				          	<dl class="layui-nav-child">
+				            	<dd class="labor_reservation_navbar"><a href="#">实验室预约</a></dd>	
+				            	<dd class="equip_reservation_navbar"><a href="#">设备预约</a></dd>    
+				          	</dl>
+			        	</li>
+				        <li class="layui-nav-item">
+				        	<a href="javascript:;"><i class="glyphicon glyphicon-th-list"></i>预约记录</a>
+							<dl class="layui-nav-child">
+					            <dd class="labReservationRecord"><a href="#">实验室预约记录</a></dd>
+					            <dd class="devReservationRecord"><a href="#">设备预约记录</a></dd>
+					        </dl>
+				        </li>
+				        
+				      </ul>
+		    	</div>
+		  	</div>
+			<div id="right_content"></div>
+
+
+
+		</div>
+		<!-- main_content -->
+	</div>
+	<!-- cont -->
+	<script>
+	//JavaScript代码区域
+	layui.use('element', function(){
+	  var element = layui.element;	  
+	});	
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/bootstrap-table.css" />
+<link rel="stylesheet" type="text/css" href="css/toastr.min.css" />
+<script type="text/javascript" src="js/toastr.min.js"></script>
+<script type="text/javascript" src="js/echarts.js"></script>
+<script type="text/javascript" src="js/bootstrap-table.js"></script>
+<script type="text/javascript" src="js/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript" src="js/adminJS/dailyEquip.js"></script>
+</head>
+<body>
+	<div class="nav">
+		当前位置：<span>首页/日常管理/设备使用情况统计</span>
+	</div>
+	<h3 class="dailytitle">设备使用情况统计</h3>
+	<hr />
+	<div class="equipflex">
+		<div style="flex:2">
+			<div class="input-group">
+				<span class="input-group-addon">类别：</span> <select id="eqType"
+					class="form-control">
+					<option id="type" type="reset" value="1">电脑</option>
+					<option value="2">打印/扫描</option>
+					<option value="3">开发板</option>
+					<option value="4">智能设备</option>
+				</select>
+			</div>
+		</div>
+		<div class="flexpart flex" style="flex:7">
+		<div class="equipflex1">
+			<div class="input-group ">
+				<input type="text" class="form-control" placeholder="请选择开始日期"
+					id="EstartTime"> <span class="input-group-addon "
+					style="background-color: #ffffff; border: 0px">--</span> <input
+					type="text" class="form-control" placeholder="请选择结束日期"
+					id="EendTime">
+			</div>
+		</div>
+		<div class="equipflex2">
+			<button type="button" class="btn btn-info" style="width:90%;" id="checkbtn">查询</button>
+		</div>
+		</div>
+	</div>
+	
+	<div class="equipecharts" id="echarts"
+		style="height: 40%; display: block;"></div>
+	<table id="table_equip" style="word-break:break-all; word-wrap:break-all;"></table>
+<body>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/bootstrap-table.css"/>  
+<link rel="stylesheet" type="text/css" href="css/toastr.min.css"/>
+<script type="text/javascript" src="js/toastr.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript" src="js/echarts.js"></script> 
+<script type="text/javascript" src="js/adminJS/dailyProject.js"></script>
+</head>
+<body>
+    <div class="nav">当前位置：<span>首页/日常管理/入驻项目情况统计</span></div>	 	
+    <h3 class="dailytitle">入驻项目情况统计</h3>
+    <hr/>
+    <div class="LabProject">
+		<div class="LabProject1">
+			<div class="input-group input-inline-sm" >
+			<span class="input-group-addon">查询</span>
+			<input type="text" class="form-control" placeholder="请选择开始日期"  id="PstartTime">
+			<span class="input-group-addon " style="background-color: #ffffff; border: 0px">--</span>
+			<input type="text" class="form-control" placeholder="请选择结束日期" id="PendTime"></div>
+		</div>
+		<div class="LabProject2">                   
+		    <button type="button"  class="btn btn-info" id="checkbtn">查询</button>
+		</div>
+	</div>
+    <div id="echarts" style="height:40%"></div>		
+	
+    <table id="table_project" style="word-break:break-all; word-wrap:break-all;"></table>
+</body>

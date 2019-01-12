@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="css/bootstrap-table.css" />
+<link rel="stylesheet" type="text/css" href="css/toastr.min.css" />
+<script type="text/javascript" src="js/toastr.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-table.js"></script>
+<script type="text/javascript" src="js/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript" src="js/adminJS/useEquiploan.js"></script>
+</head>
+<body>
+	<div class="nav">
+		当前位置：<span>首页/设备使用管理/设备借出管理</span>
+	</div>
+	<h3 class="dailytitle">设备借出管理</h3>
+	<hr />
+	<div class="col-lg-12">
+		<div class="input-group" style="width: 40%; margin-left: 28%">
+			<div class="input-group-btn" style="width: 14%; font-weight: bold;">
+				<select id="auditStatus" class="form-control"
+					style="background-color: rgba(200, 200, 220, 0.2); padding: 0px;">
+					<option value="9">全部</option>
+					<option value="3">借出</option>
+					<option value="0">预约</option>
+					<option value="2">通过</option>
+				</select>
+			</div>
+			<!-- /btn-group -->
+			<input type="text" placeholder="请输入关键字" class="form-control"
+				id="keyword"> <span class="input-group-btn">
+				<button class="btn btn-info " type="button" id="checkbtn">查询</button>
+			</span>
+		</div>
+		<!-- /input-group -->
+	</div>
+	<!-- /.col-lg-6 -->
+	<div style="width: 100%; display: flex;">
+		<div class="btn-group" style="flex: 11;">
+			<button id="passbtn" type="button" class="btn btn-success">
+				<span class="glyphicon glyphicon-ok"></span>批量通过</button>
+			<button id="backbtn" type="button" class="btn btn-info"
+				data-toggle="modal" data-target="">
+				<span class="glyphicon glyphicon-retweet"></span>批量还回</button>
+			<button id="refusebtn" type="button" class="btn btn-danger">
+				<span class="glyphicon glyphicon-remove"></span>批量拒绝</button>
+		</div>
+		<div style=" flex: 1">
+			<button id="rfidbtn" type="button" class="btn btn-primary">
+				<span class="glyphicon glyphicon-th"></span>FRID读取</button>
+		</div>
+	</div>
+	<table id="table_Equiploan" style="word-break:break-all; word-wrap:break-all;"></table>
+</body>
+<div class="modal fade " id="devdetaiInfo" tabindex="-1 " role="dialog"
+	aria-labelledby="devdetaiInfoModal">
+	<div class="modal-dialog modal-md">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div id="devdetaiInfoModal" class="modal-title ">
+					<form class="ibox-content form-horizontal m-t ">
+						<h3>设备信息</h3>
+						<hr />
+						<div class="form-group ">
+							<label class="col-sm-3 control-label ">设备型号：</label>
+							<div class="col-sm-8 ">
+								<input id="MdevModel" name="MdevModel" class="form-control "
+									type="text" disabled="disabled">
+
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">设备序号：</label>
+							<div class="col-sm-8">
+								<textarea id="MdevSn" name="MdevSn" class="form-control"
+									type="text" disabled="disabled"></textarea>
+
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">设备状态：</label>
+							<div class="col-sm-8">
+								<textarea id="MdevStatus" name="MdevStatus" class="form-control"
+									type="text" disabled="disabled"></textarea>
+
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade " id="appointmentsInfo" tabindex="-1 "
+	role="dialog" aria-labelledby="appointmentsInfoModal">
+	<div class="modal-dialog modal-md">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div id="appointmentsInfoModal" class="modal-title ">
+					<form class="ibox-content form-horizontal m-t ">
+						<h3>项目组及使用目的</h3>
+						<hr />
+						<div class="form-group ">
+							<label class="col-sm-3 control-label ">使用人：</label>
+							<div class="col-sm-8 ">
+								<input id="Mduser" name="Mduser" class="form-control "
+									type="text" disabled="disabled">
+
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">项目组：</label>
+							<div class="col-sm-8">
+								<input id="MproName" name="MproName" class="form-control "
+									type="text" disabled="disabled">
+
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">使用目的：</label>
+							<div class="col-sm-8">
+								<textarea id="Mpurpose" name="Mpurpose" class="form-control"
+									type="text" disabled="disabled"></textarea>
+							</div>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="devreturnModal" tabindex="-1 "
+	role="dialog" aria-labelledby="returnModal">
+	<div class="modal-dialog modal-md">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div id="returnModal" class="modal-title ">
+					<form id="devreturnform" class="ibox-content form-horizontal m-t " action=""
+						method="post">
+						<h3 class="glyphicon glyphicon-asterisk">设备还回</h3>
+						<hr />
+						<div class="form-group">
+							<label class="col-sm-3 control-label">设备状态：</label>
+							<div class="col-sm-8">
+								<select id="devStatus" name="devStatus" class="form-control">
+									<option value="0">空闲</option>
+									<option value="2">维修</option>
+									<option value="3">损坏</option>
+									<option value="4">报废</option>
+								</select>
+							</div>
+						</div>
+						<button type="button"
+							class="btn btn-info block full-width m-b noticebutton" style="display:block;margin:0 auto"
+							id="confirmbtn">确定</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

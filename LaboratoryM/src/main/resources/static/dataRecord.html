@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/bootstrap-table.css"/>  
+<link rel="stylesheet" type="text/css" href="css/toastr.min.css"/>
+<script type="text/javascript" src="js/toastr.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-table.js"></script> 
+<script type="text/javascript" src="js/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript" src="js/adminJS/dataRecord.js"></script>
+</head>
+<body>  
+    <div class="nav">当前位置：<span>首页/日常管理/门禁记录日志</span></div>	 	
+	<h3 class="dailytitle">门禁记录日志</h3>
+	<hr/>
+	<div class="flex equip" >
+	  	<div  style="flex:6;padding-left:15%;">
+			<div class="input-group input-inline-sm col-sm-12" >
+			<span class="input-group-addon">查询</span>
+			<input type="text" class="form-control" placeholder="请选择开始日期"  id="RstartTime">
+			<span class="input-group-addon " style="background-color: #ffffff; border: 0px">--</span>
+			<input type="text" class="form-control" placeholder="请选择结束日期" id="RendTime"></div>
+		 </div>
+		 <div style="flex:1;padding-left:1%; width:50%;" >                  
+		    <button type="button"  class="btn btn-info" id="checkbtn">查询</button>
+		 </div>
+		 <div style="flex:1;">                  
+		    <button type="button"  class="btn btn-danger" id="deletebtn" style="margin-left:15%;">批量删除</button>
+		 </div>
+       
+	</div>
+    <table id="table_record" style="word-break:break-all; word-wrap:break-all;"></table>
+</body>

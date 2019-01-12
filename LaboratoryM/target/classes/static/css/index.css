@@ -1,0 +1,758 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html, body {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	/* font-size: 65%; */
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a:active {
+	text-decoration: none;
+}
+
+#main {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+/*.....标题........*/
+.navbar {
+	margin: 0;
+	width: 100%;
+	height: 10%;
+	background-color: rgb(67, 142, 185);
+	color: #ffffff;
+}
+
+.title {
+	height: 100%;
+	font-size: 3.5rem;
+	font-family: "幼圆";
+	line-height: 70px;
+	color: #ffffff;
+	padding-left: 5%;
+	text-decoration: none;
+}
+
+.androidtitle {
+	height: 100%;
+	font-size: 2rem;
+	font-family: "幼圆";
+	line-height: 70px;
+	color: #ffffff;
+	padding-left: 5%;
+	display: none;
+}
+
+.navbar #s {
+	margin-left: 3%;
+	font-size: 5rem;
+	font-family: "微软雅黑";
+	color: #ffffff;
+	text-align: center;
+	border: 3px solid #cccccc;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	border-radius: 100%;
+	padding: 0 2%;
+}
+
+.user {
+	height: 100%;
+	font-size: 1.3rem;
+	color: #ffffff;
+	line-height: 70px;
+}
+
+.leave {
+	height: 100%;
+	font-size: 1.3rem;
+	color: #ffffff;
+	line-height: 70px;
+}
+/*..........左侧列表.........*/
+#main .mainpart {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+}
+
+#main .menu {
+	width: 16%;
+	padding: 0;
+	margin: 0;
+	background-color: #ffffff;
+	border-left: solid 1px #cccccc;
+}
+
+.list_dt {
+	font-size: 1.3rem;
+	background: #f9f9f9;
+	color: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	height: 20%;
+	line-height: 34px;
+	padding: 0 20% 0 6%;
+	position: relative;
+}
+
+.list_dt:hover {
+	color: #438eb9;
+}
+
+.list_dt:hover ._after {
+	display: block;
+	width: 3px;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.list_dt_icon {
+	position: absolute;
+	right: 10px;
+	top: 9px;
+	display: block;
+	width: 16px;
+	height: 16px;
+	background: url("../img/off.png") no-repeat;
+}
+
+#open {
+	color: #438eb9;
+}
+
+#open ._after {
+	display: block;
+	width: 3px;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	color: #438eb9;
+}
+
+#open .list_dt_icon {
+	background: url("../img/open.png") no-repeat;
+}
+
+.list_dd {
+	display: none;
+	font-size: 1.3rem;
+}
+
+.list_li {
+	/*    background:rgb(67,142,165);*/
+	list-style-type: none;
+	color: #999999;
+	width: 100%;
+	height: 20%;
+	padding: 0 8%;
+	line-height: 34px;
+	cursor: pointer;
+}
+
+.list_li:hover {
+	color: #438eb9;
+}
+
+.androidUl {
+	display: none;
+	width: 100%;
+	background: #ffffff;
+	position: absolute;
+	top: 10%;
+	left: 0%;
+	z-index: 5;
+	font-size: 1.5rem;
+	border: 1px solid #cccccc;
+	padding-left: 3%;
+}
+
+.androidUl .Android {
+	width: 95%;
+	height: 40px;
+	border-bottom: 1px solid #cccccc;
+}
+
+.androidUl .Android :hover {
+	color: #438eb9;
+}
+/*........右侧主页面.........*/
+#main #main_content { /*更换div*/
+	width: 84%;
+	height: 100%;
+	position: absolute;
+	top: 0%;
+	left: 16%;
+	padding: 0 1%;
+}
+
+#main #welcome { /*欢迎页面*/
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	font-size: 3rem;
+	padding: 5% 0 0 0;
+	font-family: "微软雅黑";
+	color: #000000;
+	background-image: url('../img/bg.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+#main  div.nav { /*位置导航条*/
+	width: 100%;
+	text-align: left;
+	font-weight: bold;
+	border-bottom: solid 1px #cccccc;
+	font-size: 1.5rem;
+}
+
+.dailytitle { /*导航标题*/
+	width: 100%;
+	height: 5%;
+	text-align: center;
+	font-weight: bold;
+}
+/*......布局.....  */
+.flex {
+	width: 100%;
+	display: flex;
+}
+
+/*.....考勤.......*/
+.attendance {
+	padding-left: 8%;
+}
+
+.attendanceflex1 {
+	flex: 1;
+	margin-left: 2%
+}
+
+.attendanceflex2 {
+	flex: 1;
+	margin-left: 2%
+}
+
+.attendanceflex2 button {
+	width: 30%;
+}
+/*......统计..........*/
+.LabProject {
+	width: 100%;
+	display: flex;
+	padding-left: 22%;
+	margin-bottom: 2%
+}
+
+.LabProject1 {
+	flex: 1;
+}
+
+.LabProject2 {
+	flex: 1;
+	padding-left: 5%
+}
+/*......LabEquip借出.....*/
+#auditStatus {
+	background-color: rgba(200, 200, 220, 0.2);
+	padding: 0px;
+}
+/*。。。。。。。温度。。。。。。。。。。。。。  */
+#main_content #tempmain {
+	margin: auto;
+	padding: 5% 0 0 5%;
+	width: 90%;
+	height: 40%;
+	text-align: center;
+	background: #e6e6e6;
+}
+
+#main_content #tempmain .hegiht {
+	font-size: 24px;
+	width: 20%;
+	height: 40px;
+	color: #ffffff;
+}
+
+#main_content #tempmain .divhegiht {
+	width: 80%;
+	height: 40px;
+	color: #000000;
+	font-size: 16px;
+}
+
+#myStat p {
+	position: absolute;
+	top: 40%;
+	left: 35%;
+	z-index: 2;
+	font-size: 2.5rem;
+}
+
+#myStat2 p {
+	position: absolute;
+	top: 40%;
+	left: 35%;
+	z-index: 2;
+	font-size: 2.5rem;
+}
+
+#history {
+	width: 50%;
+	margin: 5% 23%;
+	height: 40px;
+}
+
+/*.....设备编辑..............*/
+.equip {
+	width: 80%;
+	height: 4%;
+}
+
+.equipEditflex {
+	flex: 1;
+	padding: 0 2% 0 2%;
+}
+
+.equipspan {
+	background-color: rgb(67, 142, 185);
+	color: #FFFFFF;
+	height: 40px;
+	font-size: 16px;
+}
+
+.equipinput {
+	height: 40px;
+	font-size: 16px;
+}
+
+.equipflex {
+	width: 90%;
+	display: flex;
+	padding-left: 5%;
+	margin-bottom: 2%;
+}
+
+.equipflex1 {
+	flex: 6;
+	margin-left: 1%;
+}
+
+.equipflex2 {
+	flex: 1;
+	margin-left: 2%;
+}
+/*.........EquipRFID读取...............*/
+.RFIDspan {
+	background-color: rgb(67, 142, 185);
+	color: #FFFFFF;
+	width: 50%;
+	height: 60px;
+	font-size: 20px;
+}
+
+.RFIDinput {
+	width: 180%;
+	height: 60px;
+	font-size: 16px;
+}
+
+.RFIDbutton {
+	height: 60px;
+	font-size: 20px;
+}
+
+/*......智能班牌.......*/
+.intelligence {
+	width: 100%;
+	height: 12%;
+	background: #f9f9f9;
+	padding-top: 2%;
+}
+
+.intelligenceshow {
+	flex: 1;
+	text-align: center;
+	font-size: 2rem;
+}
+
+.intelligence .checkbox {
+	flex: 1;
+	margin-top: 0;
+	margin-right: 5%;
+}
+/*..............表格..........*/
+table {
+	font-size: 1.5rem;
+}
+
+.pagination-info {
+	font-size: 1.5rem;
+}
+/* .......bootbox弹出框........ */
+.bootbox-body {
+	font-size: 1.6rem;
+}
+
+/*.........Equip盘点..............*/
+.inventory {
+	width: 50%;
+	margin-left: 23%;
+	height: 50px;
+	font-size: 20px;
+	margin-bottom: 40px;
+}
+/*..........公告新增.........*/
+.noticemodal .modal-dialog {
+	width: 70%;
+}
+
+.noticemodal form {
+	width: 100%;
+}
+
+.noticemodal h3 {
+	font-size: 24px;
+	margin: auto;
+	font-weight: bold;
+}
+
+.noticemodal label {
+	font-size: 18px;
+}
+
+.noticemodal .form-group textarea {
+	height: 200px;
+	margin-bottom: 10px;
+}
+
+.noticemodal .form-group {
+	padding-top: 8px;
+}
+
+.noticemodal .form-group input {
+	height: 50px;
+}
+
+.noticebutton {
+	width: 15%;
+	margin-left: 33%;
+	color: #ffffff;
+}
+
+.noticebutton1 {
+	width: 15%;
+	margin-left: 5%;
+	color: #ffffff;
+}
+/*。。。。。。。。实验室信息查询。。。。。。。。。。。。。。。*/
+.myModal .modal-dialog {
+	width: 70%;
+}
+
+.myModal form {
+	width: 100%;
+}
+
+#myModalLabmsg input {
+	height: 50px;
+}
+
+#myModalLabmsg1 input {
+	height: 50px;
+}
+
+.usermodal .modal-dialog {
+	width: 70%;
+}
+
+.usermodal form {
+	width: 100%;
+}
+
+.usermodal h3 {
+	font-size: 24px;
+	margin: auto;
+	font-weight: bold;
+}
+
+.usermodal label {
+	font-size: 18px;
+}
+
+.usermodal .form-group {
+	height: 80px;
+}
+
+.input {
+	height: 50px;
+}
+/*。。。。。修改个人信息。。。。。。*/
+#myModal {
+	height: 100%;
+}
+
+#myModal .modal-dialog {
+	width: 70%;
+	height: 100%;
+}
+
+#myModal form {
+	width: 100%;
+	height: 100%;
+}
+
+#myModal h3 {
+	font-size: 24px;
+	margin: auto;
+	font-weight: bold;
+}
+
+#myModal label {
+	font-size: 18px;
+}
+
+#myModal .form-group {
+	height: 3%;
+}
+
+#myModal .form-group input {
+	height: 100%;
+}
+
+#myMadal .sex {
+	font-size: 24px;
+}
+
+#myModal #submitBut {
+	width: 15%;
+	margin-left: 33%;
+	color: #ffffff;
+}
+
+/*......智能班牌.......*/
+.intelligence {
+	width: 100%;
+	height: 12%;
+	background: #f9f9f9;
+	padding-top: 2%;
+}
+
+.intelligenceshow {
+	flex: 1;
+	text-align: center;
+	font-size: 2rem;
+}
+
+.intelligence .checkbox {
+	flex: 1;
+	margin-top: 0;
+	margin-right: 5%;
+}
+
+@media ( device-height :568px) and (-webkit-min-device-pixel-ratio:2) {
+	/* 兼容iphone5 */
+	html {
+		font-size: 11px !important;
+	}
+	.title {
+		display: none
+	}
+	.androidtitle {
+		display: block
+	}
+	#main .menu {
+		display: none
+	}
+	#main #main_content { /*更换div*/
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		padding: 0 1%;
+	}
+	#myModal .modal-dialog {
+		width: 95%;
+		height: 100%;
+	}
+	#myModal #submitBut {
+		width: 20%;
+		margin-left: 33%;
+		color: #ffffff;
+	}
+	.noticemodal .modal-dialog {
+		width: 95%;
+	}
+	.attendance {
+		padding-left: 0%;
+	}
+	.flex {
+		display: block;
+	}
+	.flexpart {
+		margin-top: 2%;
+		display: flex;
+	}
+	.attendanceflex1 {
+		flex: 3;
+	}
+	.attendanceflex2 {
+		margin-left: 1%;
+	}
+	.attendanceflex2 button {
+		width: 100%;
+	}
+	.equipflex {
+		width: 100%;
+		display: block;
+		padding-left: 0%;
+	}
+	.equipflex1 {
+		flex: 6;
+		margin-left: 1%;
+	}
+	.equipflex2 {
+		flex: 1;
+		margin-left: 2%;
+	}
+	.LabProject {
+		width: 100%;
+		display: flex;
+		padding-left: 0%;
+		margin-bottom: 2%
+	}
+	.LabProject1 {
+		flex: 6;
+	}
+	.LabProject2 {
+		flex: 1;
+		padding-left: 5%;
+	}
+	.nav {
+		display: none;
+	}
+	#main #welcome { /*欢迎页面*/
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	font-size: 2rem;
+	padding: 30% 0 0 0;
+	font-family: "微软雅黑";
+	color: #000000;
+	background-image: url('../img/androidbg.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+}
+
+@media ( min-device-width :320px) and (max-device-width : 1024px) and
+	(-webkit-min-device-pixel-ratio : 2) {
+	html {
+		font-size: 11px !important;
+	}
+	.title {
+		display: none
+	}
+	.androidtitle {
+		display: block
+	}
+	#main .menu {
+		display: none
+	}
+	#main #main_content { /*更换div*/
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		padding: 0 1%;
+	}
+	#myModal .modal-dialog {
+		width: 95%;
+		height: 100%;
+	}
+	#myModal #submitBut {
+		width: 20%;
+		margin-left: 33%;
+		color: #ffffff;
+	}
+	.noticemodal .modal-dialog {
+		width: 95%;
+	}
+	.attendance {
+		padding-left: 0%;
+	}
+	.flex {
+		display: block;
+	}
+	.flexpart {
+		margin-top: 2%;
+		display: flex;
+	}
+	.attendanceflex1 {
+		flex: 3;
+	}
+	.attendanceflex2 {
+		margin-left: 1%;
+	}
+	.attendanceflex2 button {
+		width: 100%;
+	}
+	.equipflex {
+		width: 100%;
+		display: block;
+		padding-left: 0%;
+	}
+	.equipflex1 {
+		flex: 6;
+		margin-left: 1%;
+	}
+	.equipflex2 {
+		flex: 1;
+		margin-left: 2%;
+	}
+	.LabProject {
+		width: 100%;
+		display: flex;
+		padding-left: 0%;
+		margin-bottom: 2%
+	}
+	.LabProject1 {
+		flex: 6;
+	}
+	.LabProject2 {
+		flex: 1;
+		padding-left: 5%;
+	}
+	.nav {
+		display: none;
+	}
+	#main #welcome { /*欢迎页面*/
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	font-size: 2rem;
+	padding: 30% 0 0 0;
+	font-family: "微软雅黑";
+	color: #000000;
+	background-image: url('../img/androidbg.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+}

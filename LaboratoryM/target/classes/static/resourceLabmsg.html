@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="css/bootstrap-table.css" />
+<link rel="stylesheet" type="text/css" href="css/toastr.min.css" />
+<script type="text/javascript" src="js/toastr.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-table.js"></script>
+<script type="text/javascript" src="js/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript" src="js/adminJS/resourceLabmsg.js"></script>
+</head>
+<body>
+	<div class="nav">
+		当前位置：<span>首页/资源信息管理/实验室信息管理</span>
+	</div>
+	<h3 class="dailytitle">实验室信息管理</h3>
+	<hr />
+	<div class="row" style="margin-bottom: 3%;">
+		<div class="input-group" style="padding: 0 25%;">
+			<input type="text" placeholder="请输入关键字" class="form-control"
+				id="checkLabName"> <span class="input-group-btn">
+				<button class="btn btn-info " type="button" id="checkbtn">查询</button>
+			</span>
+		</div>
+	</div>
+	<div id="userbutton" class="btn-group col-lg-5"
+		style="padding: 0; margin-bottom: 1%;">
+		<button id="Elap_add" type="button" class="btn btn-info col-lg-3"
+			data-toggle="modal" data-target="#myModalLabmsg">
+			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
+		</button>
+	    <button id="Elap_edit" type="button" class="btn btn-primary col-lg-3"
+			data-toggle="modal" data-target="">
+			<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改
+		</button>
+		<button id="Elap_delect" type="button"
+			class="btn btn-danger col-lg-3">
+			<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>批量删除
+		</button>
+
+	</div>
+
+
+	<table id="table_labmsg" style="word-break:break-all; word-wrap:break-all;"></table>
+</body>
+<div class="modal fade myModal" id="myModalLabmsg" tabindex="-1 "
+	role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div id="myModalLabel" class="modal-title ">
+					<form id="addlabform" class="ibox-content form-horizontal m-t "
+						action="" method="post">
+						<h3>新增实验室</h3>
+						<hr />
+						<div class="form-group ">
+							<label class="col-sm-3 control-label ">实验室名称：</label>
+							<div class="col-sm-8 ">
+								<input id="addlabName" name="labName" class="form-control "
+									placeholder="请输入实验室名" type="text">
+
+							</div>
+						</div>
+						<div class="form-group ">
+							<label class="col-sm-3 control-label ">地点：</label>
+							<div class="col-sm-8 ">
+								<input id="addlabSite" name="labSite" class="form-control "
+									placeholder="请输入地点" type="text">
+
+							</div>
+						</div>
+						<div class="form-group ">
+							<label class="col-sm-3 control-label ">职能：</label>
+							<div class="col-sm-8 ">
+								<input id="addlabFunction" name="addlabFunction"
+									class="form-control " placeholder="请输入职能" type="text">
+
+							</div>
+						</div>
+						<div class="form-group ">
+							<label class="col-sm-3 control-label ">管理员：</label>
+							<div class="col-sm-8 ">
+								<input id="addadministrators" name="addadministrators"
+									class="form-control " placeholder="请输入管理员名字" type="text">
+
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">状态：</label>
+							<div class="col-sm-8">
+								<select id="addlabStatus" name="addlabStatus"
+									class="form-control">
+									<option value="0">空闲</option>
+									<option value="1">在用</option>
+
+								</select>
+
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">备注：</label>
+							<div class="col-sm-8">
+								<textarea id="addremark" name="addremark" class="form-control"
+									type="text" placeholder="请填写备注"></textarea>
+							</div>
+						</div>
+
+						<input hidden="hidden" type="text" name="status" value="0">
+						<button type="button"
+							class="btn btn-info block full-width m-b noticebutton"
+							id="addbtn">确定</button>
+						<button type='reset'
+							class="btn btn-info block full-width m-b noticebutton1"
+							id="resetBut">重置</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade myModal" id="myModalLabmsg1" tabindex="-1 "
+	role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div id="myModalLabel" class="modal-title ">
+					<form id="labdetailform" class="ibox-content form-horizontal m-t "
+						action="" method="post">
+						<h3>实验室详细内容</h3>
+						<hr />
+						<div class="form-group ">
+							<label class="col-sm-3 control-label ">实验室名称：</label>
+							<div class="col-sm-8 ">
+								<input id="editlabName" name="labName" class="form-control "
+									placeholder="请输入实验室名称" type="text">
+
+							</div>
+						</div>
+						<div class="form-group ">
+							<label class="col-sm-3 control-label ">地点：</label>
+							<div class="col-sm-8 ">
+								<input id="editlabSite" name="labSite" class="form-control "
+									placeholder="请输入地点" type="text">
+
+							</div>
+						</div>
+						<div class="form-group ">
+							<label class="col-sm-3 control-label ">职能：</label>
+							<div class="col-sm-8 ">
+								<input id="editlabFunction" name="labFunction"
+									class="form-control " placeholder="请输入职能" type="text">
+
+							</div>
+						</div>
+						<div class="form-group ">
+							<label class="col-sm-3 control-label ">管理员：</label>
+							<div class="col-sm-8 ">
+								<input id="editadministrators" name="administrators"
+									class="form-control " placeholder="请输入管理员名" type="text">
+
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">状态：</label>
+							<div class="col-sm-8">
+								<select id="editlabStatus" name="labStatus" class="form-control">
+									<option value="0">空闲</option>
+									<option value="1">在用</option>
+									<option value="2">维修</option>
+								</select>
+								<div>
+									<span id="usernameDiv" style="color: red; font-size: 15px;"></span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">备注：</label>
+							<div class="col-sm-8">
+								<textarea id="editremark" name="remark" class="form-control"
+									type="text" placeholder="请填写备注"></textarea>
+							</div>
+						</div>
+						<input hidden="hidden" type="text" name="editId" value="0"
+							id="editId">
+						<button type="button"
+							class="btn btn-info block full-width m-b noticebutton" style="display:block;margin:0 auto" 
+							id="changebtn">确定</button>
+						
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/bootstrap-table.css"/>  
+<link rel="stylesheet" type="text/css" href="css/toastr.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/jquery.circliful.css"/>
+<script type="text/javascript" src="js/toastr.min.js"></script>
+<script type="text/javascript" src="js/echarts.js"></script> 
+<script type="text/javascript" src="js/jquery.circliful.min.js"></script> 
+<script type="text/javascript" src="js/adminJS/dailyTemp.js"></script>
+</head>
+<body>
+    <div class="nav">当前位置：<span>首页/日常管理/温湿度展示</span></div>	 	
+	<h3 class="dailytitle">温湿度展示</h3>
+	<hr/>
+	<div style="display:flex;">
+	<p style="font-size:20px;flex:6">当前温度：</p >
+	<p  style="flex:1"><button type="button" class="btn btn-info " id="resetBtn">重启传感器</button></p >
+	</div>
+     <div id="tempmain" style="display:flex;">
+			<div  style="flex:1;margin-top:2%">
+				 <div class="input-group " style="margin-bottom:10%">
+				   <span class="input-group-addon btn-info hegiht" id="basic-addon1" >实验室&nbsp;</span>
+				   <div id="class" type="text" class="form-control divhegiht"  aria-describedby="basic-addon1">
+				   </div>
+				 </div>
+				 <div class="input-group ">
+				   <span class="input-group-addon btn-info hegiht" id="basic-addon1" >时间&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				   <div  id="getTime"  type="text" class="form-control divhegiht"  aria-describedby="basic-addon1" >
+				   	
+				   </div>
+				 </div>
+			</div>
+			<div  style="flex:2;">
+				 <div style="display:flex;padding-left:10%;">
+					    <div style="flex:1">
+							<div id="myStat" data-dimension="200"  data-info="温度" data-width="30" data-fontsize="38" 
+				             data-percent="100" data-fgcolor="#7ea568" data-bgcolor="#eee" data-fill="#ddd">
+				             <p id="temp"></p>
+				             </div>
+						</div>
+						<div  style="flex:1">
+							<div id="myStat2" data-dimension="200" data-info="湿度" data-width="30" data-fontsize="38" data-percent="100" 
+				            data-fgcolor="#61a9dc" data-bgcolor="#eee" data-fill="#ddd">
+				            <p id="Humidity"></p>
+				            </div>
+					    </div>
+			     </div>
+			</div>
+	   </div> 
+	<button type="button" class="btn btn-info" id="history" >
+	  <span class="" aria-hidden="true" ></span>采集记录
+	</button>
+   <div class="historymsg" style="display:none;">
+     
+	  <div class="row" style="margin-bottom:3%;">
+	       <div class="col-md-6">
+	        <div class="input-group" style="padding:0 10%;">
+			    <span class="input-group-addon ">当前采集周期</span>
+				<input type="text" placeholder="" class="form-control" disabled="disabled" id="nowCycle">
+			</div>
+			</div>
+			<div class=" col-md-6">
+			<div class="input-group" style="padding:0 5%;">
+			    <span class="input-group-addon ">
+					<i>更改采集周期</i>								
+				</span>
+				<input type="text" placeholder="请输入分钟" class="form-control"
+					id="deviceName"> <span class="input-group-btn">
+					<button class="btn btn-info " type="button" id="checkbtn">确定</button>
+				</span>
+			</div>
+			</div>
+		</div>
+	<div id="echarts" style="height: 500%;width:100%;"></div>
+  </div> 
+</body>

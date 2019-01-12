@@ -1,0 +1,91 @@
+<div id="equip_reservation" >
+						<form class="form-horizontal" style="width:90%;margin-left: 5%;">
+							<div class="form-group">
+								<label class="col-xs-3"></label>
+							    <div class="input-group col-xs-6">
+							      	<input type="text"  id="keyWords" class="form-control" placeholder="输入设备名或设备型号进行搜索">
+							      	<span class="input-group-addon btn-primary" id="searchBtn" style="width:12%;color:white;"><i class="glyphicon glyphicon-search"></i></span>
+							    </div>
+							</div>
+							<div class="form-group" style="margin-top: 5%;">
+								<table data-toggle="table" id="deviceTab"></table>
+							</div>
+							<div class="modal fade" id="appoint_equip_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+												&times;
+											</button>
+											<h3 class="modal-title" id="myModalLabel">
+												设备预约登记
+											</h3>
+										</div>
+										<div class="modal-body">
+											<form class="form-horizontal">
+											<input type="hidden" id="devDetailId"/>
+												<div class="form-group">
+													<label class="control-label col-xs-3">设备型号</label>
+													<div class="col-xs-8">
+														<input type="text" class="form-control" id="modalDevModel" value="" readonly="readonly"/>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="control-label col-xs-3">设备名称</label>
+													<div class="col-xs-8">
+														<input type="text" class="form-control" id="modalDevName" value="" readonly="readonly"/>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="control-label col-xs-3">设备序号</label>
+													<div class="col-xs-8">
+														<input type="text" class="form-control" id="modalDevSn" value="" readonly="readonly"/>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="control-label col-xs-3">使用人</label>
+													<div class="col-xs-8">
+														<input type="text" class="form-control" id="equip_user" />
+													</div>
+												</div>			
+												<div class="form-group">
+													<label class="control-label col-xs-3">开始时间</label>
+													<div class="col-xs-8">
+														<div class="input-group date form_datetime" id="modalSTime">
+									                    	<input class="form-control" type="text" value="" readonly placeholder="开始时间">
+										                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+															<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+										                </div> 						
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="control-label col-xs-3">结束时间</label>
+													<div class="col-xs-8">
+														<div class="input-group date form_datetime" id="modalETime">
+									                    	<input class="form-control" type="text" value="" readonly placeholder="结束时间">
+										                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+															<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+										                </div> 
+														<input type="hidden" id="equipendTime" value="" />
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="control-label col-xs-3">使用目的</label>
+													<div class="col-xs-8">
+														<textarea class="form-control" id="purpose" rows="5"></textarea>
+													</div>
+												</div>
+											</form>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-primary" id="equipsaveBtn">
+												确定保存
+											</button>
+											<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>		

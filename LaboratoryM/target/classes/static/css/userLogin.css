@@ -1,0 +1,553 @@
+  *{
+			padding: 0;
+			margin: 0;
+		}
+		html{
+			width: 100%;
+			height: 100%;
+		}
+		body{
+			width:100%;
+			height: 100%;
+		}
+		#container{
+			float: left;
+			width: 100%;
+			height: 100%; 
+			position: absolute;
+			background-image: url(../img/timg.jpg);
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			
+		}
+		/*--------------------header-------------------*/
+		#header{
+			float: left;
+			width:100%;
+			height:20%;
+			
+		}
+		#header img{
+			float: left;
+			width:8%;
+			height: 50%;
+			margin-left: 47%;
+			margin-top:8%;
+		}
+		#header #title{
+			float: left;
+			width:13%;
+			height:30%;
+			margin-left:46%;
+			padding-top: 1%;
+			font-size: 1.3em;
+			color: white;
+			
+		}
+		
+		/*--------------------main-------------------*/
+		#main_content{
+			display: block;
+			float: left;
+			width:30%;
+			height:45%;
+			margin-top:8% ;
+			margin-left:35%;
+			-webkit-box-shadow: #666 5px 5px 10px;
+            -moz-box-shadow: #666 5px 5px 10px;
+   			box-shadow: #666 5px 5px 10px;
+   			/*background-image: url(../img/sclogo.jpg);
+   			background-size: 100% 100%;
+			background-repeat: no-repeat;*/
+			background-color: rgba(100,100,100,.3);
+		}
+		#formDiv{
+			width: 100%;
+			height: 100%;
+			
+			
+		}
+		#login_form{
+			width:100%;
+			height:100%;
+		}
+		#login_form .input-group {
+			margin: 0 0 7% 0 !important;
+		}
+		#login_form .form-control,
+		 #login_form .input-group {
+			height: 100%;
+			width:90%;
+		}
+		#login_form .form-group {
+			margin-left:10%;
+			margin-bottom: 0 !important;
+		}
+		.btn-sm{
+			width:90%;
+			/*margin-left:5%;*/
+			padding: 2%;
+			font-size: 1.2em;
+			border-radius: 20px;
+			
+		}
+		.bordera{
+			width:90%;
+			height:100%;
+			margin-top:5%;
+			border-bottom: 2px solid #999999;
+			
+		}
+		#login_form a{
+			width:20%;
+			height: 40px;
+			line-height: 40px;
+			margin-left:40%;
+			font-size: 1em;
+			color: #FFFFFF;
+		}
+		#login_form a:hover{
+			color: #2AABD2;
+		}
+		#verDiv{
+			display: none;
+		}
+		input[type=checkbox]{
+            -webkit-appearance: none;
+            appearance: none;
+            outline: none;
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+            vertical-align: center;
+            background: #fff;
+            border: 1px solid #ccc;
+            position: relative; 
+        }
+
+        input[type=checkbox]:checked::after {
+            content: "\2713";/*css3的对号样式*/
+            display: block;
+            position: absolute;
+            top: -0.4px;
+            left: -1px;
+            right: 0;
+            bottom: 0;
+            width: 15px;
+            height: 15px;
+            text-align: center;
+            line-height: 15px;
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: bolder;
+            background-color: #007DDB;
+        }
+	
+	/*模态框*/
+      .modal-body{
+      	background-color: rgba(100,150,150,.6);
+      }
+	  
+	  
+		
+		
+	/* 移动端 */	
+@media screen and (min-width:200px) and (max-width:320px){
+		  #container{
+			float: left;
+			width: 100%;
+			height: 100%; 
+			position: absolute;
+			background-image:none;
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			background-image: url(../img/sun.jpg);
+		}
+		 
+		  
+		  
+	 	#header{
+			float: left;
+			width:100%;
+			height:50%;
+			
+		}
+		#header img{
+			position:absolute; 
+			left:-10%;
+			width:35%;
+			height:18%;
+			 
+		}
+		#header #title{
+			position:absolute;
+			top:23%;
+			left:-10%;
+			width:100%;
+			height:100%;
+			margin-left:33%;
+			padding-top: 2%;
+			font-size: 2.0em;
+			color: black;
+			
+		}
+		#login_form a{
+			width:20%;
+			height: 40px;
+			line-height: 40px;
+			margin-left:30%;
+			font-size: 1em;
+			color: #FFFFFF;
+		}
+		#main_content{
+			 position:absolute;
+			 left:-26%;
+			 top:30%;
+			display: block;
+			width:85%;
+			height:45%;
+			-webkit-box-shadow: #666 5px 5px 10px;
+            -moz-box-shadow: #666 5px 5px 10px;
+   			box-shadow: #666 5px 5px 10px;
+   			
+			background-color: rgba(100,100,100,.3);
+		}									
+}	
+	
+	
+	
+	
+	
+	
+@media screen and (min-width:321px) and (max-width:375px){
+		  #container{
+			float: left;
+			width: 100%;
+			height: 100%; 
+			position: absolute;
+			background-image:none;
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			background-image: url(../img/sun.jpg);
+			
+		}
+		 
+		  
+		  
+	 	#header{
+			float: left;
+			width:100%;
+			height:50%;
+			
+		}
+		#header img{
+			position:absolute; 
+			left:-10%;
+			width:35%;
+			height:18%;
+			 
+		}
+		#header #title{
+			position:absolute;
+			top:23%;
+			left:-8%;
+			width:100%;
+			height:100%;
+			margin-left:33%;
+			padding-top: 2%;
+			font-size: 2.0em;
+			color: black;
+			
+		}
+		
+		#main_content{
+			 position:absolute;
+			 left:-26%;
+			 top:30%;
+			display: block;
+			width:85%;
+			height:45%;
+			-webkit-box-shadow: #666 5px 5px 10px;
+            -moz-box-shadow: #666 5px 5px 10px;
+   			box-shadow: #666 5px 5px 10px;
+   			 
+			background-color: rgba(100,100,100,.3);
+		}									
+}
+
+
+@media screen and (min-width:376px) and (max-width:414px){
+		  #container{
+			float: left;
+			width: 100%;
+			height: 100%; 
+			position: absolute;
+			background-image:none;
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			background-image: url(../img/sun.jpg);
+		}
+		 
+		  
+		  
+	 	#header{
+			float: left;
+			width:100%;
+			height:50%;
+			
+		}
+		#header img{
+			position:absolute; 
+			left:-10%;
+			width:35%;
+			height:18%;
+			 
+		}
+		#header #title{
+			position:absolute;
+			top:23%;
+			left:-8%;
+			width:100%;
+			height:100%;
+			margin-left:33%;
+			padding-top: 2%;
+			font-size: 2.0em;
+			color: black;
+			
+		}
+		
+		#main_content{
+			 position:absolute;
+			 left:-26%;
+			 top:30%;
+			display: block;
+			width:85%;
+			height:45%;
+			-webkit-box-shadow: #666 5px 5px 10px;
+            -moz-box-shadow: #666 5px 5px 10px;
+   			box-shadow: #666 5px 5px 10px;
+   			 
+			background-color: rgba(100,100,100,.3);
+		}									
+}
+
+@media screen and (min-width:415px) and (max-width:639px){
+		  #container{
+			float: left;
+			width: 100%;
+			height: 100%; 
+			position: absolute;
+			background-image:none;
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			background-image: url(../img/sun.jpg);
+		}
+		 
+		  
+		  
+	 	#header{
+			float: left;
+			width:100%;
+			height:50%;
+			
+		}
+		#header img{
+			position:absolute; 
+			left:-10%;
+			width:35%;
+			height:18%;
+			 
+		}
+		#header #title{
+			position:absolute;
+			top:23%;
+			left:-8%;
+			width:100%;
+			height:100%;
+			margin-left:33%;
+			padding-top: 2%;
+			font-size: 2.0em;
+			color: black;
+			
+		}
+		
+		#main_content{
+			 position:absolute;
+			 left:-26%;
+			 top:30%;
+			display: block;
+			width:85%;
+			height:45%;
+			-webkit-box-shadow: #666 5px 5px 10px;
+            -moz-box-shadow: #666 5px 5px 10px;
+   			box-shadow: #666 5px 5px 10px;
+   			 
+			background-color: rgba(100,100,100,.3);
+		}									
+}
+
+@media screen and (min-width:640px) and (max-width:719px){
+		  #container{
+			float: left;
+			width: 100%;
+			height: 100%; 
+			position: absolute;
+			background-image:none;
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			background-image: url(../img/sun.jpg);
+		}
+		 
+		  
+		  
+	 	#header{
+			float: left;
+			width:100%;
+			height:50%;
+			
+		}
+		#header img{
+			position:absolute; 
+			left:-10%;
+			width:35%;
+			height:18%;
+			 
+		}
+		#header #title{
+			position:absolute;
+			top:23%;
+			left:-8%;
+			width:100%;
+			height:100%;
+			margin-left:33%;
+			padding-top: 2%;
+			font-size: 2.0em;
+			color: black;
+			
+		}
+		
+		#main_content{
+			 position:absolute;
+			 left:-26%;
+			 top:30%;
+			display: block;
+			width:85%;
+			height:45%;
+			-webkit-box-shadow: #666 5px 5px 10px;
+            -moz-box-shadow: #666 5px 5px 10px;
+   			box-shadow: #666 5px 5px 10px;
+   			 
+			background-color: rgba(100,100,100,.3);
+		}									
+}
+
+@media screen and (min-width:720px) and (max-width:749px){
+		  #container{
+			float: left;
+			width: 100%;
+			height: 100%; 
+			position: absolute;
+			background-image:none;
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			background-image: url(../img/sun.jpg);
+		}
+		 
+		  
+		  
+	 	#header{
+			float: left;
+			width:100%;
+			height:50%;
+			
+		}
+		#header img{
+			position:absolute; 
+			left:-10%;
+			width:35%;
+			height:18%;
+			 
+		}
+		#header #title{
+			position:absolute;
+			top:23%;
+			left:-8%;
+			width:100%;
+			height:100%;
+			margin-left:33%;
+			padding-top: 2%;
+			font-size: 2.0em;
+			color: black;
+			
+		}
+		
+		#main_content{
+			 position:absolute;
+			 left:-26%;
+			 top:30%;
+			display: block;
+			width:85%;
+			height:45%;
+			-webkit-box-shadow: #666 5px 5px 10px;
+            -moz-box-shadow: #666 5px 5px 10px;
+   			box-shadow: #666 5px 5px 10px;
+   			 
+			background-color: rgba(100,100,100,.3);
+		}									
+}
+
+@media screen and (min-width:750px) and (max-width:799px){
+		  #container{
+			float: left;
+			width: 100%;
+			height: 100%; 
+			position: absolute;
+			background-image:none;
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			background-image: url(../img/sun.jpg);
+		}
+		 
+		  
+		  
+	 	#header{
+			float: left;
+			width:100%;
+			height:50%;
+			
+		}
+		#header img{
+			position:absolute; 
+			left:-10%;
+			width:35%;
+			height:18%;
+			 
+		}
+		#header #title{
+			position:absolute;
+			top:23%;
+			left:2%;
+			width:100%;
+			height:100%;
+			margin-left:33%;
+			padding-top: 2%;
+			font-size: 2.0em;
+			color: black;
+			
+		}
+		
+		#main_content{
+			 position:absolute;
+			 left:-26%;
+			 top:30%;
+			display: block;
+			width:85%;
+			height:45%;
+			-webkit-box-shadow: #666 5px 5px 10px;
+            -moz-box-shadow: #666 5px 5px 10px;
+   			box-shadow: #666 5px 5px 10px;
+   			 
+			background-color: rgba(100,100,100,.3);
+		}									
+}
+

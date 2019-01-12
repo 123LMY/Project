@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>管理端首页</title>
+<link rel="stylesheet" href="css/bootstrap-table.css" />
+<script type="text/javascript" src="js/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript" src="js/adminJS/dailyIntelligence.js"></script>
+</head>
+<body>
+	<div class="nav">
+		当前位置：<span>首页/日常管理/智能班牌展示</span>
+	</div>
+	<h3 class="dailytitle">智能班牌展示</h3>
+	<hr />
+	<div class="intelligence" style="display: flex;">
+		<div class="intelligenceshow">展示项：</div>
+		<div class="checkbox form-control ">
+			<label><input type="checkbox" value="0" id="checkboxResult">成果列表</label>
+		</div>
+		<div class="checkbox  form-control">
+			<label><input type="checkbox" value="1" id="checkboxNoitce">公告信息</label>
+		</div>
+		<div class="checkbox  form-control">
+			<label><input type="checkbox" value="3">优秀作品</label>
+		</div>
+	</div>
+	<div id="intellNoitce" style="display: none;margin:2%;">
+		<h3>公告信息</h3>
+		<table id="table_intellNoitce" style="padding: 0;word-break:break-all; word-wrap:break-all;"></table>
+	</div>
+	<div id="intellResult" style="display: none;margin:2%;word-break:break-all; word-wrap:break-all;">
+		<h3>成果列表</h3>
+		<div class="LabProject">
+			<div style="flex: 1;margin:auto;">
+				<div class="input-group input-inline-sm">
+					<span class="input-group-addon">查询</span> <input type="text"
+						class="form-control" placeholder="请选择开始日期" id="IntellstartTime">
+					<span class="input-group-addon "
+						style="background-color: #ffffff; border: 0px">--</span> <input
+						type="text" class="form-control" placeholder="请选择结束日期"
+						id="IntellendTime">
+				</div>
+			</div>
+			<div style="flex: 1; padding-left: 5%">
+				<button type="button" class="btn btn-info" id="checkbtn" style="width:30%">查询</button>
+			</div>
+		</div>
+		<table id="table_intellResult" style="word-break:break-all; word-wrap:break-all;"></table>
+	</div>
+
+</body>
